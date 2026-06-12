@@ -1,0 +1,167 @@
+body {
+  width: 360px;
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-mark {
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.tagline {
+  font-size: 0.68rem;
+  color: #7a6a5a;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+input[type="number"] {
+  margin-bottom: 14px;
+}
+
+.sites-section {
+  margin-bottom: 14px;
+}
+
+.sites-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.selection-badge {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #4a7c59;
+  background: #e8f2eb;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.sites-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.text-btn {
+  border: none;
+  background: none;
+  color: #4a7c59;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.text-btn:hover {
+  text-decoration: underline;
+}
+
+.tab-list {
+  max-height: 156px;
+  overflow-y: auto;
+  border: 1px solid #ebe4da;
+  border-radius: 10px;
+  background: #faf8f5;
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee8df;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.tab-item:last-child {
+  border-bottom: none;
+}
+
+.tab-item:hover {
+  background: #fff;
+}
+
+.tab-item.selected {
+  background: #f0f7f2;
+}
+
+.tab-item input {
+  flex-shrink: 0;
+  accent-color: #4a7c59;
+}
+
+.tab-item.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.site-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.tab-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.tab-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-domain {
+  font-size: 0.68rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.active-patterns {
+  margin-bottom: 12px;
+}
+
+.empty-tabs {
+  padding: 16px 12px;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+}

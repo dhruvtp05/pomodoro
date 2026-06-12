@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f7f4ef;
+  color: #2c2c2c;
+  padding: 14px;
+}
+
+h1 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.hint {
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.cat-panel {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.cat-avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background: #f5f0e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cat-avatar img,
+#cat-image {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  display: block;
+}
+
+.cat-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.cat-stat {
+  text-align: center;
+}
+
+.cat-stat dt {
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.cat-stat dd {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin: 0;
+}
+
+.kibble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: #8b5a2b;
+}
+
+.header-nav,
+#app-nav {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-width: 50px;
+  height: 46px;
+  padding: 5px 6px;
+  border: 1px solid #e0d6ca;
+  border-radius: 10px;
+  background: #fff;
+  color: #6a7a6a;
+  font-size: 0.6rem;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+}
+
+.nav-btn img {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.nav-btn span {
+  display: block;
+}
+
+.nav-btn:hover {
+  background: #f0f7f2;
+  border-color: #c5d9ca;
+  color: #4a7c59;
+}
+
+.nav-btn.active {
+  background: #e8f2eb;
+  border-color: #4a7c59;
+  color: #2d5a3d;
+  box-shadow: inset 0 0 0 1px rgba(74, 124, 89, 0.15);
+}
+
+.nav-btn.active img {
+  opacity: 1;
+}
+
+.nav-btn:active {
+  transform: scale(0.97);
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #4a7c59;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #3d6849;
+}
+
+.btn.danger {
+  background: #c45c4a;
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background: #a84d3d;
+}
+
+.timer-display {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0;
+  color: #4a7c59;
+}
+
+.session-meta {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: #5a4a3a;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: #5a4a3a;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.pattern-summary {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: #f5faf6;
+  border: 1px solid #d8e8dc;
+  border-radius: 10px;
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6a8a72;
+  margin-bottom: 6px;
+}
+
+.pattern-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pattern-chip {
+  font-size: 0.68rem;
+  color: #3d5a44;
+  background: #fff;
+  border: 1px solid #c5d9ca;
+  padding: 3px 8px;
+  border-radius: 999px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

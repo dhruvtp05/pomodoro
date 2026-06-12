@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Purrmodoro",
+  "version": "1.2.3",
+  "description": "Pomodoro study app with tab blocking and a cat companion.",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "storage",
+    "alarms",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_popup": "pages/popup/popup.html",
+    "default_title": "Purrmodoro"
+  },
+  "side_panel": {
+    "default_path": "pages/sidepanel/sidepanel.html"
+  },
+  "icons": {
+    "16": "assets/icon-16.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  }
+}

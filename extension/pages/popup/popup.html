@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purrmodoro</title>
+  <link rel="stylesheet" href="../../styles/common.css" />
+  <link rel="stylesheet" href="../../styles/popup.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img id="brand-mark" src="" alt="" class="brand-mark" width="32" height="32" />
+      <div class="brand-text">
+        <h1>Purrmodoro</h1>
+        <p class="tagline">Pomodoro Study App</p>
+      </div>
+    </div>
+    <nav id="app-nav" class="header-nav"></nav>
+  </header>
+
+  <section class="cat-panel">
+    <div class="cat-avatar">
+      <img id="cat-image" src="" alt="Cat companion" />
+    </div>
+    <dl class="cat-stats">
+      <div class="cat-stat">
+        <dt>Level</dt>
+        <dd id="cat-level">1</dd>
+      </div>
+      <div class="cat-stat">
+        <dt>Mood</dt>
+        <dd id="mood-label">Neutral</dd>
+      </div>
+      <div class="cat-stat">
+        <dt>Kibble</dt>
+        <dd><span id="kibble-count">0</span></dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="session-idle" class="panel">
+    <label for="duration">Focus duration (minutes)</label>
+    <input type="number" id="duration" min="1" max="180" value="25" />
+
+    <div class="sites-section">
+      <div class="sites-header">
+        <div>
+          <h2>Allowed Websites</h2>
+          <p class="hint">Sites you can visit during this session</p>
+        </div>
+        <span id="selection-count" class="selection-badge">0 selected</span>
+      </div>
+
+      <div class="sites-toolbar">
+        <button type="button" id="select-all-btn" class="text-btn">Select all</button>
+        <button type="button" id="clear-all-btn" class="text-btn">Clear</button>
+      </div>
+
+      <div id="tab-list" class="tab-list"></div>
+
+      <div id="pattern-summary" class="pattern-summary hidden">
+        <span class="summary-label">Allowing</span>
+        <div id="pattern-chips" class="pattern-chips"></div>
+      </div>
+    </div>
+
+    <button id="start-btn" class="btn primary">Start Session</button>
+  </section>
+
+  <section id="session-active" class="panel hidden">
+    <div class="timer-display">
+      <span id="timer">25:00</span>
+    </div>
+    <p class="session-meta">
+      Interruptions: <span id="interruption-count">0</span>
+    </p>
+    <div id="active-patterns" class="pattern-summary active-patterns"></div>
+    <button id="stop-btn" class="btn danger">Stop Session</button>
+  </section>
+
+  <p id="status-message" class="status-message"></p>
+
+  <script src="../../lib/assets.js"></script>
+  <script src="../../lib/cats.js"></script>
+  <script src="../../lib/nav.js"></script>
+  <script src="../../lib/urlWhitelist.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

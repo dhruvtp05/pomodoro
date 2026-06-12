@@ -1,0 +1,85 @@
+body {
+  width: 380px;
+}
+
+.subpage-header {
+  margin-bottom: 12px;
+}
+
+.subpage-header .back-link {
+  margin-bottom: 8px;
+}
+
+.subpage-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.shop-kibble {
+  margin-top: 8px;
+}
+
+.breed-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.breed-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.breed-card.owned {
+  border-color: #4a7c59;
+}
+
+.breed-card.active {
+  background: #f0f7f2;
+}
+
+.breed-card img {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f0ebe4;
+}
+
+.breed-info {
+  flex: 1;
+}
+
+.breed-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.breed-cost {
+  font-size: 0.8rem;
+  color: #8b5a2b;
+}
+
+.buy-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: #4a7c59;
+  color: #fff;
+}
+
+.buy-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}

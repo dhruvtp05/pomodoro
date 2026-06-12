@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #2c1810 0%, #4a2c1a 50%, #1a100a 100%);
+  color: #f5ebe0;
+  padding: 24px;
+}
+
+.card {
+  max-width: 480px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px 32px;
+  backdrop-filter: blur(8px);
+}
+
+.icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #f5ebe0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #d4c4b0;
+  margin-bottom: 24px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #a89078;
+  margin-bottom: 0;
+}

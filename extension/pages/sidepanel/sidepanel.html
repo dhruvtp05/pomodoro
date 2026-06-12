@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purrmodoro Companion</title>
+  <link rel="stylesheet" href="../../styles/common.css" />
+  <link rel="stylesheet" href="../../styles/sidepanel.css" />
+</head>
+<body>
+  <header class="sidepanel-header">
+    <div class="brand">
+      <img id="brand-mark" src="" alt="" class="brand-mark" width="28" height="28" />
+      <h1>Purrmodoro</h1>
+    </div>
+    <a href="../popup/popup.html" class="header-link">Panel</a>
+  </header>
+
+  <section id="idle-view" class="idle-view">
+    <img id="idle-cat" src="" alt="Cat companion" />
+    <p>No active session. Start one from the popup to see your cat here.</p>
+  </section>
+
+  <section id="session-view" class="session-view hidden">
+    <div class="cat-stage">
+      <img id="cat-image" src="" alt="Cat companion" />
+    </div>
+
+    <div class="timer-display">
+      <span id="timer">25:00</span>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat">
+        <span class="stat-label">Mood</span>
+        <span id="mood-label" class="stat-value">Neutral</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Level</span>
+        <span id="cat-level" class="stat-value">1</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Kibble</span>
+        <span id="kibble-count" class="stat-value">0</span>
+      </div>
+    </div>
+
+    <p class="session-meta">
+      Interruptions: <span id="interruption-count">0</span>
+    </p>
+
+    <div class="patterns-panel">
+      <h2>Allowed sites</h2>
+      <ul id="pattern-list"></ul>
+    </div>
+  </section>
+
+  <script src="../../lib/assets.js"></script>
+  <script src="../../lib/cats.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

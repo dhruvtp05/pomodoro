@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Session Stats — Purrmodoro</title>
+  <link rel="stylesheet" href="../../styles/common.css" />
+  <link rel="stylesheet" href="../../styles/stats.css" />
+</head>
+<body class="stats-page">
+  <header class="subpage-header">
+    <a href="../popup/popup.html" class="back-link">← Purrmodoro</a>
+    <div class="subpage-title-row">
+      <h1>Session Stats</h1>
+      <nav id="app-nav" class="header-nav"></nav>
+    </div>
+  </header>
+
+  <section class="panel daily-panel">
+    <h2>Today</h2>
+    <div class="daily-grid">
+      <div class="daily-stat">
+        <span class="daily-value" id="stat-sessions">0</span>
+        <span class="daily-label">Sessions</span>
+      </div>
+      <div class="daily-stat">
+        <span class="daily-value" id="stat-minutes">0</span>
+        <span class="daily-label">Focus min</span>
+      </div>
+      <div class="daily-stat">
+        <span class="daily-value" id="stat-uninterrupted">0</span>
+        <span class="daily-label">Perfect</span>
+      </div>
+      <div class="daily-stat">
+        <span class="daily-value" id="stat-interruptions">0</span>
+        <span class="daily-label">Interrupts</span>
+      </div>
+      <div class="daily-stat">
+        <span class="daily-value" id="stat-kibble">0</span>
+        <span class="daily-label">Kibble</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>Recent sessions</h2>
+    <div id="history-list" class="history-list"></div>
+  </section>
+
+  <script src="../../lib/assets.js"></script>
+  <script src="../../lib/nav.js"></script>
+  <script src="../../lib/stats.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>

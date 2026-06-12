@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Shop — Purrmodoro</title>
+  <link rel="stylesheet" href="../../styles/common.css" />
+  <link rel="stylesheet" href="../../styles/shop.css" />
+</head>
+<body>
+  <header class="subpage-header">
+    <a href="../popup/popup.html" class="back-link">← Purrmodoro</a>
+    <div class="subpage-title-row">
+      <h1>Cat Shop</h1>
+      <nav id="app-nav" class="header-nav"></nav>
+    </div>
+    <p class="kibble shop-kibble"><span id="kibble-count">0</span> kibble</p>
+  </header>
+
+  <div id="breed-grid" class="breed-grid"></div>
+  <p id="shop-message" class="status-message"></p>
+
+  <script src="../../lib/assets.js"></script>
+  <script src="../../lib/cats.js"></script>
+  <script src="../../lib/nav.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>

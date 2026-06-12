@@ -1,0 +1,144 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7f4ef 0%, #ebe4d8 100%);
+  padding: 16px;
+}
+
+.sidepanel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.sidepanel-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidepanel-header .brand-mark {
+  border-radius: 6px;
+}
+
+h1 {
+  font-size: 1.1rem;
+}
+
+h2 {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #5a4a3a;
+}
+
+.header-link {
+  font-size: 0.8rem;
+  color: #4a7c59;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+.idle-view {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.idle-view img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.idle-view p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.session-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cat-stage {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 16px;
+}
+
+.session-view #cat-image {
+  width: 160px;
+  height: 160px;
+}
+
+.session-view .timer-display {
+  font-size: 2.8rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.session-view .session-meta {
+  margin-bottom: 0;
+}
+
+.patterns-panel {
+  background: #fff;
+  border: 1px solid #e0d6ca;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#pattern-list {
+  list-style: none;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+#pattern-list li {
+  font-size: 0.75rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+  word-break: break-all;
+  color: #555;
+}
+
+#pattern-list li:last-child {
+  border-bottom: none;
+}
