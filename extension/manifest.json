@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
   "name": "Purrmodoro",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "description": "Pomodoro study app with tab blocking and a cat companion.",
   "permissions": [
     "tabs",
     "webNavigation",
     "storage",
     "alarms",
-    "sidePanel"
+    "sidePanel",
+    "notifications"
   ],
   "host_permissions": [
     "<all_urls>"

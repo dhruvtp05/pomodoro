@@ -8,6 +8,44 @@
   <link rel="stylesheet" href="../../styles/popup.css" />
 </head>
 <body>
+  <div id="onboarding" class="onboarding hidden">
+    <div class="onboarding-card">
+      <div id="onboard-step-1" class="onboard-step">
+        <img id="onboard-cat" src="" alt="Cat companion" class="onboard-cat" />
+        <h2>Welcome to Purrmodoro!</h2>
+        <p>Stay focused with pomodoro sessions while your cat companion cheers you on. Earn kibble, level up, and keep your streak alive.</p>
+        <button type="button" class="btn primary onboard-next">Meet my cat →</button>
+      </div>
+      <div id="onboard-step-2" class="onboard-step hidden">
+        <h2>How blocking works</h2>
+        <p>Pick allowed websites before each focus session. Any other tab gets blocked until the session ends.</p>
+        <ul class="onboard-list">
+          <li>Focus sessions block distractions</li>
+          <li>Breaks pause blocking so you can relax</li>
+          <li>Perfect sessions earn kibble &amp; streak days</li>
+        </ul>
+        <button type="button" class="btn primary onboard-next">Got it →</button>
+      </div>
+      <div id="onboard-step-3" class="onboard-step hidden">
+        <h2>Pick your default focus</h2>
+        <div class="preset-row onboard-presets">
+          <button type="button" class="preset-btn active" data-duration="25">25 min</button>
+          <button type="button" class="preset-btn" data-duration="50">50 min</button>
+          <button type="button" class="preset-btn" data-duration="90">90 min</button>
+        </div>
+        <label class="onboard-check">
+          <input type="checkbox" id="onboard-notifications" checked />
+          Session notifications
+        </label>
+        <label class="onboard-check">
+          <input type="checkbox" id="onboard-sound" checked />
+          Notification sound
+        </label>
+        <button type="button" class="btn primary" id="onboard-finish">Start focusing</button>
+      </div>
+    </div>
+  </div>
+
   <header class="app-header">
     <div class="brand">
       <img id="brand-mark" src="" alt="" class="brand-mark" width="32" height="32" />
@@ -36,43 +74,64 @@
         <dt>Kibble</dt>
         <dd><span id="kibble-count">0</span></dd>
       </div>
+      <div class="cat-stat">
+        <dt>Streak</dt>
+        <dd id="streak-count">0</dd>
+      </div>
     </dl>
   </section>
 
   <section id="session-idle" class="panel">
-    <label for="duration">Focus duration (minutes)</label>
-    <input type="number" id="duration" min="1" max="180" value="25" />
-
-    <div class="sites-section">
-      <div class="sites-header">
-        <div>
-          <h2>Allowed Websites</h2>
-          <p class="hint">Sites you can visit during this session</p>
-        </div>
-        <span id="selection-count" class="selection-badge">0 selected</span>
+    <div class="presets-section">
+      <p class="presets-label">Focus</p>
+      <div class="preset-row" id="focus-presets">
+        <button type="button" class="preset-btn active" data-phase="focus" data-duration="25">25 min</button>
+        <button type="button" class="preset-btn" data-phase="focus" data-duration="50">50 min</button>
+        <button type="button" class="preset-btn" data-phase="focus" data-duration="90">90 min</button>
       </div>
-
-      <div class="sites-toolbar">
-        <button type="button" id="select-all-btn" class="text-btn">Select all</button>
-        <button type="button" id="clear-all-btn" class="text-btn">Clear</button>
-      </div>
-
-      <div id="tab-list" class="tab-list"></div>
-
-      <div id="pattern-summary" class="pattern-summary hidden">
-        <span class="summary-label">Allowing</span>
-        <div id="pattern-chips" class="pattern-chips"></div>
+      <p class="presets-label">Break</p>
+      <div class="preset-row" id="break-presets">
+        <button type="button" class="preset-btn" data-phase="break" data-duration="5">5 min</button>
+        <button type="button" class="preset-btn" data-phase="break" data-duration="15">15 min</button>
       </div>
     </div>
 
-    <button id="start-btn" class="btn primary">Start Session</button>
+    <label for="duration">Duration (minutes)</label>
+    <input type="number" id="duration" min="1" max="180" value="25" />
+
+    <div id="whitelist-section">
+      <div class="sites-section">
+        <div class="sites-header">
+          <div>
+            <h2>Allowed Websites</h2>
+            <p class="hint">Sites you can visit during focus</p>
+          </div>
+          <span id="selection-count" class="selection-badge">0 selected</span>
+        </div>
+
+        <div class="sites-toolbar">
+          <button type="button" id="select-all-btn" class="text-btn">Select all</button>
+          <button type="button" id="clear-all-btn" class="text-btn">Clear</button>
+        </div>
+
+        <div id="tab-list" class="tab-list"></div>
+
+        <div id="pattern-summary" class="pattern-summary hidden">
+          <span class="summary-label">Allowing</span>
+          <div id="pattern-chips" class="pattern-chips"></div>
+        </div>
+      </div>
+    </div>
+
+    <button id="start-btn" class="btn primary">Start Focus Session</button>
   </section>
 
   <section id="session-active" class="panel hidden">
+    <p id="phase-label" class="phase-label">Focus session</p>
     <div class="timer-display">
       <span id="timer">25:00</span>
     </div>
-    <p class="session-meta">
+    <p id="session-meta-active" class="session-meta">
       Interruptions: <span id="interruption-count">0</span>
     </p>
     <div id="active-patterns" class="pattern-summary active-patterns"></div>

@@ -2,6 +2,136 @@ body {
   width: 360px;
 }
 
+.onboarding {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(44, 44, 44, 0.45);
+  padding: 14px;
+}
+
+.onboarding:not(.hidden) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onboarding.hidden {
+  display: none;
+}
+
+.onboarding-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.onboard-step h2 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.onboard-step p {
+  font-size: 0.82rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.onboard-cat {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto 12px;
+}
+
+.onboard-list {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0 0 14px 18px;
+  line-height: 1.6;
+}
+
+.onboard-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.onboard-presets {
+  margin-bottom: 14px;
+}
+
+.presets-section {
+  margin-bottom: 12px;
+}
+
+.presets-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.preset-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.preset-btn {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 4px;
+  border: 1px solid #e0d6ca;
+  border-radius: 8px;
+  background: #faf8f5;
+  color: #5a4a3a;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+
+.preset-btn:hover {
+  background: #f0f7f2;
+  border-color: #c5d9ca;
+}
+
+.preset-btn.active {
+  background: #e8f2eb;
+  border-color: #4a7c59;
+  color: #2d5a3d;
+}
+
+.phase-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4a7c59;
+  margin-bottom: 4px;
+}
+
+.phase-label.break {
+  color: #8b6ba8;
+}
+
+#streak-count.streak-hot {
+  color: #c45c4a;
+}
+
 .app-header {
   display: flex;
   align-items: flex-start;
@@ -31,6 +161,16 @@ body {
   color: #7a6a5a;
   margin-top: 2px;
   font-weight: 500;
+}
+
+.start-btn.break-btn,
+.btn.break-btn {
+  background: #8b6ba8;
+  color: #fff;
+}
+
+.btn.break-btn:hover {
+  background: #7560a0;
 }
 
 input[type="number"] {

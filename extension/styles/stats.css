@@ -2,6 +2,34 @@ body.stats-page {
   width: 380px;
 }
 
+.streak-panel {
+  margin-bottom: 12px;
+}
+
+.streak-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.streak-emoji {
+  font-size: 1.8rem;
+}
+
+.streak-display .daily-value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4a7c59;
+}
+
+.streak-display .daily-label {
+  display: block;
+  font-size: 0.68rem;
+  color: #888;
+  margin-top: 2px;
+}
+
 .subpage-header {
   margin-bottom: 12px;
 }

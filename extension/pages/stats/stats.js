@@ -1,3 +1,4 @@
+const statStreak = document.getElementById("stat-streak");
 const statSessions = document.getElementById("stat-sessions");
 const statMinutes = document.getElementById("stat-minutes");
 const statUninterrupted = document.getElementById("stat-uninterrupted");
@@ -15,6 +16,7 @@ async function loadStats() {
   if (!data) return;
 
   const daily = data.daily;
+  statStreak.textContent = data.streakActive ? `${data.streak} days` : `${data.streak} (inactive)`;
   statSessions.textContent = daily.sessionCount;
   statMinutes.textContent = daily.focusMinutes;
   statUninterrupted.textContent = daily.uninterruptedCount;
@@ -39,9 +41,10 @@ function renderHistory(sessions) {
     const badge = getBadge(session);
     const timeRange = `${formatSessionTime(session.startTime)} – ${formatSessionTime(session.endTime)}`;
 
+    const phaseLabel = session.phase === "break" ? " · Break" : "";
     item.innerHTML = `
       <div class="history-top">
-        <span class="history-date">${formatSessionDate(session.date)}</span>
+        <span class="history-date">${formatSessionDate(session.date)}${phaseLabel}</span>
         <span class="history-badge ${badge.className}">${badge.label}</span>
       </div>
       <div class="history-details">
@@ -55,6 +58,9 @@ function renderHistory(sessions) {
 }
 
 function getBadge(session) {
+  if (session.phase === "break") {
+    return { label: "Break", className: "partial" };
+  }
   if (session.uninterrupted) {
     return { label: "Perfect", className: "success" };
   }

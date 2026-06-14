@@ -4,6 +4,24 @@ body {
   padding: 16px;
 }
 
+.phase-label {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #4a7c59;
+  margin-bottom: 8px;
+}
+
+.phase-label.break {
+  color: #8b6ba8;
+}
+
+.session-view .session-meta.hidden {
+  display: none;
+}
+
 .sidepanel-header {
   display: flex;
   align-items: center;

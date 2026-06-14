@@ -8,6 +8,7 @@ const catLevelEl = document.getElementById("cat-level");
 const kibbleCountEl = document.getElementById("kibble-count");
 const interruptionCountEl = document.getElementById("interruption-count");
 const patternList = document.getElementById("pattern-list");
+const phaseLabel = document.getElementById("phase-label");
 
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("brand-mark").src = getAssetUrl("assets/icons/app-mark.svg");
@@ -27,19 +28,26 @@ async function refreshState() {
     idleView.classList.add("hidden");
     sessionView.classList.remove("hidden");
 
+    const isBreak = state.sessionPhase === "break";
+    phaseLabel.textContent = isBreak ? "Break time — browse freely" : "Focus session";
+    phaseLabel.classList.toggle("break", isBreak);
+
     catImage.src = sprite;
     timerEl.textContent = formatTime(state.remainingSeconds);
     moodLabelEl.textContent = MOOD_LABELS[state.moodState] || "Neutral";
     catLevelEl.textContent = state.catLevel;
     kibbleCountEl.textContent = state.kibble;
     interruptionCountEl.textContent = state.interruptions;
+    interruptionCountEl.closest(".session-meta")?.classList.toggle("hidden", isBreak);
 
     patternList.innerHTML = "";
-    (state.whitelistPatterns || []).forEach((pattern) => {
+    if (!isBreak) {
+      (state.whitelistPatterns || []).forEach((pattern) => {
       const li = document.createElement("li");
       li.textContent = pattern;
       patternList.appendChild(li);
     });
+    }
   } else {
     idleView.classList.remove("hidden");
     sessionView.classList.add("hidden");
